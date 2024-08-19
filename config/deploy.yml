@@ -6,7 +6,7 @@ image: alexohre/dikeh
 
 # Deploy to these servers.
 servers:
-  - 138.68.191.166
+  - 167.71.134.198
 
 # Credentials for your image host.
 registry:
@@ -21,7 +21,7 @@ registry:
 # Remember to run `kamal env push` after making changes!
 env:
   clear:
-    DB_HOST: 138.68.191.166
+    DB_HOST: 167.71.134.198
   secret:
     - RAILS_MASTER_KEY
 
@@ -43,25 +43,25 @@ builder:
 accessories:
   db:
     image: postgres:15
-    host: 138.68.191.166
+    host: 167.71.134.198
     port: 5432
     env:
       clear:
-        POSTGRES_USER: deploy
+        POSTGRES_USER: dikeh
         POSTGRES_DB: dikeh_production
       secret:
         - POSTGRES_PASSWORD
     files:
       # - config/postgres/production.cnf:/etc/postgresql/my.conf
-      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql # This should be formatted as an array
+      - config/init.sql:/docker-entrypoint-initdb.d/setup.sql # This should be formatted as an array
     directories:
       - data:/var/lib/postgresql/data # Volume for PostgreSQL data
-  # redis:
-  #   image: redis:7.0
-  #   host: 138.68.191.166
-  #   port: 6379
-  #   directories:
-  #     - data:/data # Volume for Redis data
+  redis:
+    image: redis:7.0
+    host: 167.71.134.198
+    port: 6379
+    directories:
+      - data:/data # Volume for Redis data
 # accessories:
 #   db:
 #     image: mysql:8.0
