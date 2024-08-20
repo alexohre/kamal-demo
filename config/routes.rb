@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :articles
+
+  post 'send_email', to: 'pages#send_email', as: 'send_email'
+  get 'sms', to: 'pages#sms'
+  get 'email', to: 'pages#email'
   resources :posts
   root 'pages#home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
