@@ -1,27 +1,27 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<div class="row">
+	<div class="col-lg-8 mx-auto">
+		<%= form_with(model: post) do |form| %>
+			<% if post.errors.any? %>
+				<div style="color: red">
+					<h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+					<ul>
+						<% post.errors.each do |error| %>
+							<li><%= error.full_message %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+			<div class="mb-3">
+				<%= form.label :title, class: "form-label" %>
+				<%= form.text_field :title, class: "form-control" %>
+			</div>
+			<div class='mb-3'>
+				<%= form.label :content, class: "form-label" %>
+				<%= form.text_area :content, rows: 4, class: "form-control" %>
+			</div>
+			<div>
+				<%= form.submit class: "btn btn-primary" %>
+			</div>
+		<% end %>
+	</div>
+</div>
