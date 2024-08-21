@@ -78,7 +78,8 @@ Rails.application.configure do
     address: "smtp.mailgun.org",
     port: 587,
     user_name: "postmaster@mail.softalx.com",
-    password: Rails.application.credentials.fetch(:mailgun)[:password],
+    password: ENV['EMAIL_PASSWORD'],
+    # password: Rails.application.credentials.fetch(:mailgun)[:password],
     authentication: :plain,
     enable_starttls_auto: true
   }
