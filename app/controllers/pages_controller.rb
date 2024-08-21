@@ -15,7 +15,7 @@ class PagesController < ApplicationController
     content = params[:content]
 
     # Call the mailer to send the email
-    SenderMailer.send_mail(to, subject, content).deliver_later
+    SenderMailer.send_mail(to, subject, content).deliver_now
 
     flash[:notice] = "Email sent successfully!"
     redirect_to email_path # Redirect to the desired path after sending the email
@@ -42,10 +42,10 @@ class PagesController < ApplicationController
     options = {
       body: {
         to: phone_number, # Wrap the phone number in an array
-        from: "fastBeep",
+        from: "N-Alert",
         sms: message,
         type: "plain", # or "flash"
-        channel: "generic", # or "dnd" for Do Not Disturb
+        channel: "dnd", # or "dnd" for Do Not Disturb
         api_key: Rails.application.credentials.fetch(:termii)[:api_key]
       }.to_json,
       headers: {
