@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   post 'send_email', to: 'pages#send_email', as: 'send_email'
+  post '/send_sms', to: 'pages#send_sms', as: 'send_sms'
+
   get 'sms', to: 'pages#sms'
   get 'email', to: 'pages#email'
   resources :posts

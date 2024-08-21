@@ -75,13 +75,21 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mailersend.net',
+    address: "smtp.mailgun.org",
     port: 587,
-    user_name: "MS_xC1dwx@trial-351ndgw9orq4zqx8.mlsender.net",
-    password: ENV['EMAIL_PASSWORD'],
-    authentication: 'plain',
+    user_name: "postmaster@mail.softalx.com",
+    password: Rails.application.credentials.fetch(:mailgun)[:password],
+    authentication: :plain,
     enable_starttls_auto: true
   }
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.mailersend.net',
+  #   port: 587,
+  #   user_name: "MS_xC1dwx@trial-351ndgw9orq4zqx8.mlsender.net",
+  #   password: ENV['EMAIL_PASSWORD'],
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true
+  # }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
