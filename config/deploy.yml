@@ -57,12 +57,12 @@ accessories:
       - config/init.sql:/docker-entrypoint-initdb.d/setup.sql # This should be formatted as an array
     directories:
       - data:/var/lib/postgresql/data # Volume for PostgreSQL data
-  # redis:
-  #   image: redis:7.0
-  #   host: 188.166.172.137
-  #   port: 6379
-  #   directories:
-  #     - data:/data # Volume for Redis data
+  redis:
+    image: redis:7.0
+    host: 188.166.172.137
+    port: 6379
+    directories:
+      - data:/data # Volume for Redis data
 # Name of your application. Used to uniquely configure containers.
 # service: my-app
 
