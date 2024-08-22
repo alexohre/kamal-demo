@@ -15,7 +15,7 @@ class PagesController < ApplicationController
     content = params[:content]
 
     # Call the mailer to send the email
-    SenderMailer.send_mail(to, subject, content).deliver_now
+    SenderMailer.send_mail(to, subject, content).deliver_later
 
     flash[:notice] = "Email sent successfully!"
     redirect_to email_path # Redirect to the desired path after sending the email
