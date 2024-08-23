@@ -10,7 +10,7 @@ image: alexohre/dikeh
 
 ssh:
   proxy:
-    - 157.245.29.158
+    "157.245.29.158"
     # Assumed load balancer IPV4 address
 
 # Deploy to these servers.
@@ -103,9 +103,10 @@ accessories:
       - config/init.sql:/docker-entrypoint-initdb.d/setup.sql # This should be formatted as an array
     directories:
       - data:/var/lib/postgresql/data # Volume for PostgreSQL data
+      #
   redis:
     image: redis:7.0
-    hosts: 10.106.0.6
+    host: 10.106.0.6
     port: 6379
     roles:
       - web
