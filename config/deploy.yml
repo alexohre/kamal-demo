@@ -105,7 +105,7 @@ accessories:
       - data:/var/lib/postgresql/data # Volume for PostgreSQL data
   redis:
     image: redis:7.0
-    host: 10.106.0.6
+    hosts: 10.106.0.6
     port: 6379
     roles:
       - web
