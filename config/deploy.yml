@@ -95,7 +95,7 @@ accessories:
     env:
       clear:
         POSTGRES_USER: dikeh
-        POSTGRES_DB: dikeh_production
+        POSTGRES_DB: dikeh_production1
       secret:
         - POSTGRES_PASSWORD
     files:

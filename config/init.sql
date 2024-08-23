@@ -1,1 +1,1 @@
-CREATE DATABASE dikeh_production;
+CREATE DATABASE dikeh_production1;
