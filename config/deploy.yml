@@ -10,7 +10,7 @@ image: alexohre/dikeh
 
 ssh:
   proxy:
-    "157.245.29.158"
+    - 157.245.29.158
     # Assumed load balancer IPV4 address
 
 # Deploy to these servers.
@@ -107,10 +107,13 @@ accessories:
   redis:
     image: redis:7.0
     host: 10.106.0.6
+    # hosts:
+    #   - 0.0.0.1
     port: 6379
-    roles:
-      - web
-      - job
+
+    # roles:
+    #   - web
+    #   - job
     cmd: "redis-server"
     # volumes:
     #   - /var/lib/redis:/data
