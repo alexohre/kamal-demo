@@ -1,8 +1,8 @@
 # Name of your application. Used to uniquely configure containers.
-service: dikeh
+service: dikeh1
 
 # Name of the container image.
-image: alexohre/dikeh
+image: alexohre/dikeh1
 
 # Storage location
 # volumes:
@@ -94,8 +94,8 @@ accessories:
     port: 5432
     env:
       clear:
-        POSTGRES_USER: dikeh2
-        POSTGRES_DB: dikeh_production2
+        POSTGRES_USER: dikeh
+        POSTGRES_DB: dikeh_production
       secret:
         - POSTGRES_PASSWORD
     files:

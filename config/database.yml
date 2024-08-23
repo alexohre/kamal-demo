@@ -79,7 +79,7 @@ test:
 #
 production:
   <<: *default
-  database: dikeh_production2
-  username: dikeh2
+  database: dikeh_production
+  username: dikeh
   password: <%= ENV["POSTGRES_PASSWORD"] %>
   host: <%= ENV["DB_HOST"] %>
