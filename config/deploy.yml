@@ -8,17 +8,17 @@ image: alexohre/dikeh
 # volumes:
 #   - "/storage:/rails/storage"
 
-ssh:
-  proxy:
-    "157.245.29.158"
-    # Assumed load balancer IPV4 address
+# ssh:
+#   proxy:
+#     "157.245.29.158"
+# Assumed load balancer IPV4 address
 
 # Deploy to these servers.
 servers:
   web:
     hosts:
-      - 10.106.0.2
-      - 10.106.0.4
+      - 143.110.169.34
+      - 165.22.122.101
 
     # labels:
     #   traefik.http.routers.app_name.rule: Host(`example.com`)
@@ -46,8 +46,8 @@ servers:
 
   job:
     hosts:
-      - 10.106.0.2
-      - 10.106.0.4
+      - 143.110.169.34
+      - 165.22.122.101
 
     # Or something like bin/job
     cmd: bundle exec sidekiq
@@ -65,7 +65,7 @@ registry:
 # Remember to run `kamal env push` after making changes!
 env:
   clear:
-    DB_HOST: 10.106.0.5
+    DB_HOST: 161.35.160.179
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_PASSWORD
@@ -90,7 +90,7 @@ builder:
 accessories:
   db:
     image: postgres:15
-    host: 10.106.0.5
+    host: 161.35.160.179
     port: 5432
     env:
       clear:
@@ -106,7 +106,7 @@ accessories:
       #
   redis:
     image: redis:7.0
-    host: 10.106.0.6
+    host: 161.35.162.189
     # hosts:
     #   - 0.0.0.1
     port: 6379
