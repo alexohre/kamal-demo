@@ -74,3 +74,7 @@ end
 gem "httparty", "~> 0.22.0"
 
 gem "dotenv-rails", "~> 3.1"
+
+gem "sidekiq", "~> 7.3"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
