@@ -10,7 +10,7 @@ image: alexohre/dikeh
 
 ssh:
   proxy:
-    - 157.245.29.158
+    "157.245.29.158"
     # Assumed load balancer IPV4 address
 
 # Deploy to these servers.
