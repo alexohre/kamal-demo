@@ -94,8 +94,8 @@ accessories:
     port: 5432
     env:
       clear:
-        POSTGRES_USER: dikeh
-        POSTGRES_DB: dikeh_production1
+        POSTGRES_USER: dikeh2
+        POSTGRES_DB: dikeh_production2
       secret:
         - POSTGRES_PASSWORD
     files:
