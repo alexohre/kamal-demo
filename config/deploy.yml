@@ -69,7 +69,7 @@ env:
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_PASSWORD
-    - REDIS_URL
+    # - REDIS_URL
     - EMAIL_PASSWORD
 
 # Use a different ssh user than root
